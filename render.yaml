@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: keycloak
+    env: node
+    buildCommand: ""
+    startCommand: ./bin/kc.sh start-dev --http-port=8080
+    plan: free
+    envVars:
+      - key: KC_BOOTSTRAP_ADMIN_USER
+        value: admin
+      - key: KC_BOOTSTRAP_ADMIN_PASSWORD
+        value: admin123
+    autoDeploy: true
